@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jnshu.mapper.UserQvDao">
+
+<select id="findUserById" parameterType="int" resultType="com.jnshu.entity.UserQv">
+    select * from UserQv where id=#{id}
+</select>
+
+    <update id="getUserQvname" parameterType="com.jnshu.entity.UserQv">
+        update UserQv set name =#{name } where id =#{id}
+    </update>
+
+    <select id="findAll" parameterType="com.jnshu.entity.UserQv">
+        select * from UserQv
+    </select>
+
+    <update id="updateId" parameterType="com.jnshu.entity.UserQv">
+        update UserQv set name=#{name } where id=#{id}
+    </update>
+
+    <delete id="deleteId" parameterType="int">
+        delete from UserQv where id=#{id}
+    </delete>
+
+    <insert id="addId" parameterType="com.jnshu.entity.UserQv">
+        insert into UserQv (id,name,age,jop) values (#{id},#{name},#{age},#{jop})
+    </insert>
+
+</mapper>
